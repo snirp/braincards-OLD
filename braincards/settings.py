@@ -24,13 +24,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.facebook',
+    #  https://developers.google.com/identity/sign-in/web/sign-in
+    #  https://console.developers.google.com/apis
+    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.twitter',
     'users',
     'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'users.User'
-LOGIN_URL = '/users/login'
-LOGIN_REDIRECT_URL = '/users/profile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -93,6 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -114,6 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Customize registration settings
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False

@@ -12,6 +12,7 @@ python-dotenv = "*"
 psycopg2 = "*"
 markdown = "*"
 django-filter = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.7"
