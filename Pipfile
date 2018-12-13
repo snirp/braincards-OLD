@@ -14,6 +14,7 @@ markdown = "*"
 django-filter = "*"
 django-allauth = "*"
 django-rest-auth = {extras = ["with_social"],version = "*"}
+django-ordered-model = "*"
 
 [requires]
 python_version = "3.7"

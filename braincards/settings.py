@@ -33,11 +33,13 @@ INSTALLED_APPS = [
     #  https://console.developers.google.com/apis
     'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
+    'ordered_model',
     'users',
+    'cards',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
-    'rest_auth.registration',
+    # 'rest_auth',
+    # 'rest_auth.registration',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -127,7 +129,6 @@ STATIC_URL = '/static/'
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
-
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 )

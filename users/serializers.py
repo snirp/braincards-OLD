@@ -2,7 +2,6 @@ import rest_auth.serializers
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
-from .models import User
 
 class LoginSerializer(rest_auth.serializers.LoginSerializer):
     def get_fields(self):
@@ -16,7 +15,6 @@ class LoginSerializer(rest_auth.serializers.LoginSerializer):
         attrs['username'] = attrs['email']
         del attrs['email']
         return super(LoginSerializer, self).validate(attrs)
-
 
 
 class UserDetailsSerializer(serializers.ModelSerializer):
